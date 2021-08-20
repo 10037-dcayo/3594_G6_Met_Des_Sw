@@ -70,7 +70,7 @@ $alumnos = $alumnos->fetchAll();
 
 <footer>
     <p>Derechos reservados &copy; 2021</p>
-    <p>2021</p>
+    
 </footer>
 
 </body>
