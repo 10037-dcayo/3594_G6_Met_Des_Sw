@@ -14,7 +14,7 @@ permisos($permisos);
 </head>
 <body>
 <div class="header">
-        <h1>Unidad Educativa "Marqués Selva Alegre"</h1>
+        <h1>Unidad Educativa "MARQUÉS DE SELVA ALEGRE"</h1>
         <h3>Usuario:  <?php echo $_SESSION["username"] ?></h3>
 </div>
 <nav>
@@ -48,7 +48,7 @@ permisos($permisos);
 <footer>
 
     <p>Derechos reservados &copy; 2021</p>
-</footer>
+    </footer>
 
 </body>
 
