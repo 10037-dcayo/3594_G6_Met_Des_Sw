@@ -1,8 +1,8 @@
 <?php
 //arreglo con mensajes que puede recibir
 $messages = [
-    "1" => "Credenciales incorrectas",
-    "2" => "No ha iniciado sesión"
+    "1" => "Sus credenciales son incorrectas",
+    "2" => "No ha Iniciado Sesión"
 ];
 ?>
 <!DOCTYPE html>
@@ -27,10 +27,10 @@ $messages = [
             <h1 class="animate__animated animate__backInLeft">Inicio de Sesión</h1>
             <form method="post" class="form" action="login_post.php">
                 <label>Usuario</label><br>
-                <input type="text" placeholder="ingrese su usuario" name="username">
+                <input type="text" placeholder="Ingrese su usuario" name="username">
                 <br>
                 <label>Contraseña</label><br>
-                <input type="password" placeholder="ingrese su contraseña" name="password">
+                <input type="password" placeholder="Ingrese su contraseña" name="password">
                 <br><br>
                 <input type="submit" value="Ingresar">
             </form>
