@@ -54,7 +54,7 @@ else {
                 header('location:alumnoedit.view.php?id=' . $id_alumno . '&info=1');
             } else {
                 header('location:alumnoedit.view.php?id=' . $id_alumno . '&err=1');
-            }// validación de registro
+            }// validación del registro
 
     }
 
