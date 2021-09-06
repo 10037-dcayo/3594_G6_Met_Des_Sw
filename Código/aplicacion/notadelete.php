@@ -12,7 +12,7 @@ if($_SESSION['rol'] =='Administrador') {
             echo $e->getMessage();
         }
     } else {
-        die('Ha ocurrido un error');
+        die('Ha existido un error');
     }
 }else{
     header('location:inicio.view.php?err=1');
