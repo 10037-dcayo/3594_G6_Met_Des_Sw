@@ -22,7 +22,7 @@ if(isset($_GET['id'])) {
     $grados = $grados->fetchAll();
 
 }else{
-    Die('Ha ocurrido un error');
+    Die('Ha existido un error');
 }
 ?>
 <html>
