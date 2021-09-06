@@ -19,7 +19,7 @@ else {
         for($i = 0; $i < $num_alumnos; $i++){
             $id_alumno = htmlentities($_POST['id_alumno' . $i]);
             //por cada estudiante se recorre el numero de evaluaciones para extraer la nota de cada una
-                //funcion existeNota en functions.php valida que la nota no exista segun el alumno y la materia
+                //La funcion existeNota en functions.php valida que la nota no exista segun el alumno y la materia
                 if(existeNota($id_alumno,$id_materia,$conn) == 0){
                     for($j = 0; $j < $num_eval; $j++) {
                         $nota = htmlentities($_POST['evaluacion' . $j . 'alumno' . $i]);
