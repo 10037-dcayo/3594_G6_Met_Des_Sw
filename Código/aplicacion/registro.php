@@ -68,7 +68,7 @@
 						success:function(r){
 
 							if(r==2){
-								alertify.alert("Este usuario ya existe, prueba con otro :)");
+								alertify.alert("Usuario ya existente, prueba con otro :)");
 							}
 							else if(r==1){
 								$('#frmRegistro')[0].reset();
