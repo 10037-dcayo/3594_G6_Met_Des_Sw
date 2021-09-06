@@ -40,6 +40,35 @@ $messages = [
         ?>
         </div>
 </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#entrarSistema').click(function(){
+			if($('#username').val()==""){
+				alertify.alert("Debes agregar el usuario");
+				return false;
+			}else if($('#password').val()==""){
+				alertify.alert("Debes agregar el password");
+				return false;
+			}
+
+			cadena="username=" + $('#username').val() + 
+					"&password=" + $('#password').val();
+
+					$.ajax({
+						type:"POST",
+						url:"php/login.php",
+						data:cadena,
+						success:function(r){
+							if(r==1){
+								window.location="inicio.php";
+							}else{
+								alertify.alert("Fallo al entrar :(");
+							}
+						}
+					});
+		});	
+	});
+</script>
 
 <footer>
     <p>Derechos reservados &copy; 2021</p>
