@@ -43,7 +43,7 @@ else {
             header('location:notas.view.php?grado='.$id_grado.'&materia='.$id_materia.'&seccion='.$id_seccion.'&revisar=1&info=1');
         } else {
             header('location:notas.view.php?grado='.$id_grado.'&materia='.$id_materia.'&seccion='.$id_seccion.'&revisar=1&err=1');
-        }// validación de registro*/
+        }// validación del registro*/
 
     //sino boton modificar que esta en el archivo alumnoedit.view.php
     }else if (isset($_POST['modificar'])) {
