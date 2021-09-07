@@ -3,6 +3,16 @@ require 'functions.php';
 
 $permisos = ['Administrador','Profesor'];
 permisos($permisos);
+//consulta de grados
+$grados = $conn->prepare("select * from grados");
+$grados->execute();
+$grados = $grados->fetchAll();
+
+//consulta las secciones
+$secciones = $conn->prepare("select * from secciones");
+$secciones->execute();
+$secciones = $secciones->fetchAll();
+
 //consulta los alumnos para el listaddo de alumnos
 $alumnos = $conn->prepare("select a.id, a.num_lista, a.nombres, a.apellidos, a.genero, b.nombre as grado, c.nombre as seccion from alumnos as a inner join grados as b on a.id_grado = b.id inner join secciones as c on a.id_seccion = c.id order by a.apellidos");
 $alumnos->execute();
@@ -36,7 +46,45 @@ $alumnos = $alumnos->fetchAll();
 
 <div class="body">
     <div class="panel">
-            <h4>Listado de Alumnos</h4>
+            <h4>Nomina de Alumnos</h4>
+            <?php
+            if(!isset($_GET['consultar'])){
+            ?>
+            <p>Seleccione el curso, y la sección</p>
+            <form method="get" class="form" action="listadoalumnos.view.php">
+                <label>Seleccione el Curso</label><br>
+                <select name="grado" required>
+                    <?php foreach ($grados as $grado):?>
+                        <option value="<?php echo $grado['id'] ?>"><?php echo $grado['nombre'] ?></option>
+                    <?php endforeach;?>
+                </select>
+
+                <br><br>
+                <label>Seleccione la Sección</label><br><br>
+
+                <?php foreach ($secciones as $seccion):?>
+                    <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['nombre'] ?>
+                <?php endforeach;?>
+
+                <br><br>
+                <button type="submit" name="consultar" value="1">Consultar Nomina</button></a>
+                <br><br>
+            </form>
+            <?php
+        }
+        ?>
+        <?php
+        if(isset($_GET['consultar'])){
+            $id_grado = $_GET['grado'];
+            $id_seccion = $_GET['seccion'];
+
+            ?>
+            <br>
+            <a href="listadoalumnos.view.php"><strong><< Volver</strong></a>
+            <br>
+            <br>
+
+
             <table class="table" cellspacing="0" cellpadding="0">
                 <tr>
                     <th>No de<br>lista</th><th>Apellidos</th><th>Nombres</th><th>Género</th><th>Curso</th><th>Sección</th>
@@ -64,13 +112,16 @@ $alumnos = $alumnos->fetchAll();
                     echo '<span class="success">Registro almacenado correctamente!</span>';
                 ?>
 
-
+                <br>
+        <?php
+        }
+        ?>
+            
         </div>
 </div>
 
 <footer>
     <p>Derechos reservados &copy; 2021</p>
-    
 </footer>
 
 </body>
