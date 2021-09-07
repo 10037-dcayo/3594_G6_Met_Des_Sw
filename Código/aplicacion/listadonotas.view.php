@@ -22,7 +22,7 @@ $secciones = $secciones->fetchAll();
 <html>
 <head>
     <title>Notas | Registro de Notas</title>
-    <meta name="description" content="Registro de Notas de la Unidad Educativa Marques Selva Alegre" />
+    <meta name="description" content="REGISTRO DE NOTAS: "UNIDAD EDUCATIVA MARQUES SELVA ALEGRE" />
     <link rel="stylesheet" href="css/style.css" />
     
 
@@ -62,7 +62,7 @@ $secciones = $secciones->fetchAll();
                 <label>Seleccione la Materia</label><br>
                 <select name="materia" required>
                     <?php foreach ($materias as $materia):?>
-                        <option value="<?php echo $materia['id'] ?>"><?php echo $materia['nombre'] ?></option>
+                        <option value="<?php echo $materia['id'] ?>"><?php echo $materia['Nombre'] ?></option>
                     <?php endforeach;?>
                 </select>
 
@@ -70,7 +70,7 @@ $secciones = $secciones->fetchAll();
                 <label>Seleccione la Sección</label><br><br>
 
                 <?php foreach ($secciones as $seccion):?>
-                    <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['nombre'] ?>
+                    <input type="radio" name="seccion" required value="<?php echo $seccion['id'] ?>">Sección <?php echo $seccion['Nombre'] ?>
                 <?php endforeach;?>
 
                 <br><br>
