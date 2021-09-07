@@ -52,7 +52,7 @@ $grados = $grados->fetchAll();
                 <label>N° de Lista</label><br>
                 <input type="number" min="1" class="number" name="numlista">
                 <br><br>
-                <label>Sexo</label><br><input required type="radio" name="genero" value="M"> Masculino
+                <label>Género</label><br><input required type="radio" name="genero" value="M"> Masculino
                 <input type="radio" name="genero" required value="F"> Femenino
                 <br><br>
                 <label>Curso</label><br>
